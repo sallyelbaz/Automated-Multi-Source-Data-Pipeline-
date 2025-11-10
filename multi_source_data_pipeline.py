@@ -91,6 +91,6 @@ to_gbq(
     cust_orders,
     destination_table=destination_table,
     project_id=project_id,
-    if_exists='replace'   # replace existing table
+    if_exists='replace',   # replace existing table
     credentials=credentials
 )
