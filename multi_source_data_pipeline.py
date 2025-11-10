@@ -33,6 +33,11 @@ from google.colab import auth
 # Authenticating
 auth.authenticate_user()
 
+# Load the JSON from Github Actions Secret
+key_dict = json.loads(os.environ['BIGQUERY_CREDENTIALS_JSON'])
+
+credentials = service_account.Credentials.from_service_account_info(key_dict)
+
 # loading the customer data
 cust_url = "https://raw.githubusercontent.com/sallyelbaz/Automated-Multi-Source-Data-Pipeline-/refs/heads/main/data/customers.csv"
 cust = pd.read_csv(cust_url)
