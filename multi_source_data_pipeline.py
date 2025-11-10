@@ -78,7 +78,7 @@ orders = orders.astype({
 print(orders.dtypes)
 
 # Merging the data together into one table
-cust_orders = pd.merge(cust,orders,on="CustID")
+cust_orders = pd.merge(orders,cust,on="CustID")
 cust_orders.head()
 
 # Setting the BigQuery Parameters
