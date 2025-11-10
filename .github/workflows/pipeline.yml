@@ -8,6 +8,8 @@ on:
 jobs:
   run_pipeline:
     runs-on: ubuntu-latest
+    env:
+      BIGQUERY_CREDENTIALS_JSON: ${{ secrets.BIGQUERY_CREDENTIALS_JSON }}
 
     steps:
       - name: Checkout repository
