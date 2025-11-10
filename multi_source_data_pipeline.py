@@ -29,10 +29,7 @@ import os
 import json
 from google.cloud import bigquery
 from google.oauth2 import service_account
-from google.colab import auth
 
-# Authenticating
-auth.authenticate_user()
 
 # Load the JSON from Github Actions Secret
 key_dict = json.loads(os.environ['BIGQUERY_CREDENTIALS_JSON'])
