@@ -20,8 +20,7 @@ Expected Business Impact: Reduced manual reporting effort by 90%. Enabled real t
 decision making.
 """
 
-!pip install --upgrade google-cloud-bigquery
-!pip install --upgrade pandas-gbq
+
 
 # loading the necessary libraries
 import pandas as pd
