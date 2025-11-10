@@ -29,11 +29,11 @@ import os
 import json
 from google.cloud import bigquery
 from google.oauth2 import service_account
+from pandas_gbq import to_gbq
 
 
 # Load the JSON from Github Actions Secret
 key_dict = json.loads(os.environ['BIGQUERY_CREDENTIALS_JSON'])
-
 credentials = service_account.Credentials.from_service_account_info(key_dict)
 
 # loading the customer data
@@ -87,8 +87,10 @@ dataset_id = "CustOrders"
 table_id = "CustOrders"
 destination_table = f"{project_id}.{dataset_id}.{table_id}"
 
-cust_orders.to_gbq(
+to_gbq(
+    cust_orders,
     destination_table=destination_table,
     project_id=project_id,
     if_exists='replace'   # replace existing table
+    credentials=credentials
 )
