@@ -44,7 +44,7 @@ cust.head()
 # Standardizing Customer Data
 # renaming the columns
 cust = cust.rename(columns={
-    "ID": "CustID",
+    "customer_id": "CustID",
     "first_name": "First Name",
     "last_name": "Last Name",
     "country":"Country",
@@ -66,7 +66,7 @@ orders.head()
 # Standardizing Order Data
 # Changing Column Names
 orders = orders.rename(columns={
-  "ID": "OrderID",
+  "order_id": "OrderID",
   "customer_id": "CustID",
   "order_amount": "Order Amount",
   "order_date" : "Order Date"
